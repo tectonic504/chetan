@@ -1,0 +1,43 @@
+---
+title: Quickstart
+description: Get started with chetan in 5 minutes
+icon: Album
+---
+
+
+Within 5 minutes, we will build an **internet searching agent system** that can search the internet, check for plagiarism, and rewrite search results. This is a simple example of how to use Chetan to create an agent system.
+
+```python title="quickstart.py">
+from chetan import ChetanManager
+from chetan.lm.openai import OpenAILM
+
+from chetan.modules.rec import ToolRecommender
+from chetan.modules.memory import SimpleKVMemory
+
+from chetan.agent import AgentLoop
+
+# Initialize a manager for organizing resources
+mgr = ChetanManager()
+
+llm = OpenAILM()
+
+mgr.llm.default = llm
+
+# Embedding-based recommender to suggest relevant tools
+tool_rec = ToolRecommender() 
+# based on the current context and user input
+kv_mem = SimpleKVMemory(k=4)
+
+# Sequentially use the agent modules
+DefaultAgentLoop = AgentLoop().use(
+  tool_rec,
+  kv_mem
+)
+
+# Register the agent loop as default
+mgr.agent_loops["default"] = DefaultAgentLoop
+```
+
+<Callout>
+You wouldn't need to create an account for any provider. Everything here is fully local
+</Callout>

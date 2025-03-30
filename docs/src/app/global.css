@@ -1,0 +1,15 @@
+@import 'tailwindcss';
+@import 'fumadocs-ui/css/neutral.css';
+@import 'fumadocs-ui/css/preset.css';
+
+@source '../../node_modules/fumadocs-ui/dist/**/*.js';
+
+:root {
+  --color-fd-primary: #1f66f4;
+  --tw-prose-links: #1f66f4 !important;
+}
+ 
+.dark {
+  --color-fd-primary: #83b5ff;
+  --tw-prose-links: #83b5ff !important;
+}

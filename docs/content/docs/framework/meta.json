@@ -1,0 +1,17 @@
+{
+  "title": "Framework",
+  "description": "The chetan framework",
+  "root": true,
+  "icon": "BookOpen",
+  "pages": [
+    "---Introduction---",
+    "index",
+    "(intro)/comparison",
+    "(intro)/quickstart",
+    "---Getting started---",
+    "(getting-started)/installation",
+    "(getting-started)/guide",
+    "---Concepts---",
+    "(concepts)/agent-loop"
+  ]
+}
