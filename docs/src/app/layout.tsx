@@ -4,6 +4,8 @@ import { DM_Mono, Inter } from 'next/font/google';
 import type { ReactNode } from 'react';
 import { RootProvider } from 'fumadocs-ui/provider';
 
+import { Analytics } from "@vercel/analytics/react";
+
 const inter = Inter({
   subsets: ['latin'],
 });
@@ -23,6 +25,7 @@ export default function Layout({ children }: { children: ReactNode }) {
       suppressHydrationWarning
     >
       <body className="flex flex-col min-h-screen">
+        <Analytics />
         <RootProvider
           search={{
             enabled: true,
